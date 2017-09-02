@@ -1,7 +1,7 @@
 name: ucla-gateway
 type: theme
 description: UCLA Gateway
-package: Other
+package: UCLA
 core: 8.x
 libraries:
   - ucla_gateway/global-styling

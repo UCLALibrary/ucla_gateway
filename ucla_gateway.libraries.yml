@@ -1,0 +1,10 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/fancybox.css: {}
+      css/fixed.css: {}
+      css/flexslider.css: {}
+      css/main.css: {}
+      # css/print.css: {}
+      css/responsive.css: {}

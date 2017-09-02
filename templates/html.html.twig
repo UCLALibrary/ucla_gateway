@@ -1,33 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-
+<!--[if gt IE 8]><!--> 
+<html{{ html_attributes }}> <!--<![endif]-->
 <head>
+  <head-placeholder token="{{ placeholder_token }}">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 
-  <title>Page Title | UCLA</title>
+  <title>{{ head_title|safe_join(' | ') }}</title>
   <meta name="description" content="UCLA (University of California, Los Angeles) is the largest UC campus in terms of enrollment, and one of the few public research universities located in a major city." />
   <meta name="keywords" content="UCLA, University of California Los Angeles, UCLA Bruins" />  
 
   <link rel="shortcut icon" href="./img/favicon.ico">
   <link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
 
-  <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/responsive.css">    
-    <!--<link rel="stylesheet" href="./css/fixed.css">-->
-    <link rel="stylesheet" href="./css/print.css" media="print">
+  <css-placeholder token="{{ placeholder_token }}">
+  {# <link rel="stylesheet" href="./css/main.css"> #}
+  {# <link rel="stylesheet" href="./css/responsive.css">     #}
+  <!--<link rel="stylesheet" href="./css/fixed.css">-->
+  {# <link rel="stylesheet" href="./css/print.css" media="print"> #}
   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script src="./js/modernizr.js"></script>
+  {#<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="./js/modernizr.js"></script> #}
     
   <!--[if lte IE 6]><script src="./js/ie6/ie6-upgrade.min.js"></script><![endif]-->
 </head>
 
 
-<body>
+<body{{ attributes }}>
 <div id="ie6Warning"></div>
 
 
@@ -191,11 +193,17 @@
 <!-- End Footer -->
 
 <!-- Scripts -->
+{#
 <script src="./js/respond.js"></script>
 <script src="./js/plugins.js"></script>
 <script src="./js/global.js"></script>
 <script src="./js/responsive.js"></script>
 <script src="./js/search.js"></script>
+#}
 <!-- Version 1.4.0 04-22-13-->
+{{ page_top }}
+{{ page }}
+{{ page_bottom }}
+<js-bottom-placeholder token="{{ placeholder_token }}">
 </body>
 </html>
