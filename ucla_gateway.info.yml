@@ -5,9 +5,7 @@ package: UCLA
 core: 8.x
 libraries:
   - ucla_gateway/global-styling
- 
 base theme: false
-
 regions:
   top_bar: Top Bar
   header: Header
