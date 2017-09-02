@@ -1,0 +1,20 @@
+name: ucla-gateway
+type: theme
+description: UCLA Gateway
+package: Other
+core: 8.x
+libraries:
+  - ucla_gateway/global-styling
+ 
+base theme: false
+
+regions:
+  top_bar: Top Bar
+  header: Header
+  header_right: Header Right
+  hero: Hero
+  nav_hero: Nav Hero
+  nav_main: Nav Main
+  content: Content
+  nav_left: Nav Left
+  footer: Footer  
