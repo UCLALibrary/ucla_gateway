@@ -1,0 +1,14 @@
+{
+    "name": "z3cka/ucla_gateway",
+    "description": "The UCLA Gateway theme.",
+    "type": "drupal-theme",
+    "license": "¯\\_(ツ)_/¯",
+    "authors": [
+        {
+            "name": "Casey Grzecka",
+            "email": "cgrzecka@library.ucla.edu"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
