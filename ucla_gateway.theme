@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Functions to support theming in the ucla_gateway theme.
@@ -38,108 +37,143 @@ function ucla_gateway_page_attachments_alter(array &$page) {
  * Implements hook_preprocess_page() for page.html.twig.
  */
 function ucla_gateway_preprocess_page(array &$variables) {
+  if ($variables['is_front']) {
+    $variables['#attached']['library'][] = 'ucla_gateway/css-front';
+  }
 
-}
+  /**
+   * Implements hook_preprocess_menu() for menu.html.twig.
+   */
+  function ucla_gateway_preprocess_menu(&$variables, $hook) {
+    if ($hook == 'menu') {
+      $current_path = \Drupal::request()->getRequestUri();
+      foreach ($variables['items'] as &$item) {
+        if ($item['in_active_trail']) {
+          if ($item['url']->toString() == $current_path) {
+            $item['is_active'] = TRUE;
+          } elseif (count($item['below'])) {
+            _ucla_gateway_menu_process_submenu($item['below'], $current_path);
+          }
+        }
+      }
+    }
+  }
 
-/**
- * Implements hook_theme_suggestions_page_alter().
- */
-function ucla_gateway_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  /**
+   * Set active and active-trail class for sub-menus recursively.
+   */
+  function _ucla_gateway_menu_process_submenu(&$submenu, $current_path) {
+    foreach ($submenu as &$item) {
+      if ($item['in_active_trail']) {
+        if ($item['url']->toString() == $current_path) {
+          $item['is_active'] = TRUE;
+        } elseif (count($item['below'])) {
+          _ucla_gateway_menu_process_submenu($item['below'], $current_path);
+        }
+      }
+    }
+  }
+  /**
+   * Implements hook_theme_suggestions_page_alter().
+   */
+  function ucla_gateway_theme_suggestions_page_alter(array &$suggestions, array $variables) {
 
-}
+  }
 
-/**
- * Implements hook_theme_suggestions_node_alter().
- */
-function ucla_gateway_theme_suggestions_node_alter(array &$suggestions, array $variables) {
-  /*$node = $variables['elements']['#node'];
+  /**
+   * Implements hook_theme_suggestions_node_alter().
+   */
+  function ucla_gateway_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+    /*$node = $variables['elements']['#node'];
 
-  if ($variables['elements']['#view_mode'] == "full") {
+    if ($variables['elements']['#view_mode'] == "full") {
 
-  }*/
-}
+    }*/
+  }
 
-/**
- * Implements hook_preprocess_HOOK() for Block document templates.
- */
-function ucla_gateway_preprocess_block(array &$variables) {
+  /**
+   * Implements hook_preprocess_HOOK() for Block document templates.
+   */
+  function ucla_gateway_preprocess_block(array &$variables) {
 
-}
+  }
 
-/**
- * Implements hook_theme_suggestions_field_alter().
- */
-function ucla_gateway_theme_suggestions_field_alter(array &$suggestions, array $variables) {
-  /*$element = $variables['element'];
-  $suggestions[] = 'field__' . $element['#view_mode'];
-  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];*/
-}
+  /**
+   * Implements hook_theme_suggestions_field_alter().
+   */
+  function ucla_gateway_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+    /*$element = $variables['element'];
+    $suggestions[] = 'field__' . $element['#view_mode'];
+    $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];*/
+  }
 
-/**
- * Implements hook_theme_suggestions_field_alter().
- */
-function ucla_gateway_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
-  /*$element = $variables['element'];
-  if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
-    $suggestions[] = 'fieldset__form_composite';
-  }*/
-}
+  /**
+   * Implements hook_theme_suggestions_field_alter().
+   */
+  function ucla_gateway_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
+    /*$element = $variables['element'];
+    if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
+      $suggestions[] = 'fieldset__form_composite';
+    }*/
+  }
 
-/**
- * Implements hook_preprocess_node().
- */
-function ucla_gateway_preprocess_node(array &$variables) {
-  // Default to turning off byline/submitted.
-  //$variables['display_submitted'] = FALSE;
-}
+  /**
+   * Implements hook_preprocess_node().
+   */
+  function ucla_gateway_preprocess_node(array &$variables) {
+    // Default to turning off byline/submitted.
+    //$variables['display_submitted'] = FALSE;
 
-/**
- * Implements hook_theme_suggestions_views_view_alter().
- */
-function ucla_gateway_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  }
 
-}
+  /**
+   * Implements hook_theme_suggestions_views_view_alter().
+   */
+  function ucla_gateway_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
 
-/**
- * Implements hook_preprocess_form().
- */
-function ucla_gateway_preprocess_form(array &$variables) {
-  //$variables['attributes']['novalidate'] = 'novalidate';
-}
+  }
 
-/**
- * Implements hook_preprocess_select().
- */
-function ucla_gateway_preprocess_select(array &$variables) {
-  //$variables['attributes']['class'][] = 'select-chosen';
-}
+  /**
+   * Implements hook_preprocess_form().
+   */
+  function ucla_gateway_preprocess_form(array &$variables) {
+    //$variables['attributes']['novalidate'] = 'novalidate';
+  }
 
-/**
- * Implements hook_preprocess_field().
- */
-function ucla_gateway_preprocess_field(array &$variables, $hook) {
-  /*switch ($variables['element']['#field_name']) {
-  }*/
-}
+  /**
+   * Implements hook_preprocess_select().
+   */
+  function ucla_gateway_preprocess_select(array &$variables) {
+    //$variables['attributes']['class'][] = 'select-chosen';
+  }
 
-/**
- * Implements hook_preprocess_details().
- */
-function ucla_gateway_preprocess_details(array &$variables) {
-  /*$variables['attributes']['class'][] = 'details';
-  $variables['summary_attributes']['class'] = 'summary';*/
-}
+  /**
+   * Implements hook_preprocess_field().
+   */
+  function ucla_gateway_preprocess_field(array &$variables, $hook) {
+    /*switch ($variables['element']['#field_name']) {
+    }*/
+  }
 
-/**
- * Implements hook_theme_suggestions_details_alter().
- */
-function ucla_gateway_theme_suggestions_details_alter(array &$suggestions, array $variables) {
+  /**
+   * Implements hook_preprocess_details().
+   */
+  function ucla_gateway_preprocess_details(array &$variables) {
+    /*$variables['attributes']['class'][] = 'details';
+    $variables['summary_attributes']['class'] = 'summary';*/
+  }
 
-}
+  /**
+   * Implements hook_theme_suggestions_details_alter().
+   */
+  function ucla_gateway_theme_suggestions_details_alter(array &$suggestions, array $variables) {
 
-/**
- * Implements hook_preprocess_menu_local_task().
- */
-function ucla_gateway_preprocess_menu_local_task(array &$variables) {
-  //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+  }
+
+  /**
+   * Implements hook_preprocess_menu_local_task().
+   */
+  function ucla_gateway_preprocess_menu_local_task(array &$variables) {
+    //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+  }
 }

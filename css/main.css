@@ -91,17 +91,17 @@ sub { bottom:-.25em; }
 dd { margin:0 0 0 15px; }
 
 ul,ol { margin:0 0 10px; }
-ul li { color:#1e4b87; list-style:none; }
-ol li { color:#1e4b87; list-style:outside decimal; margin-left:15px; }
+ul li { list-style:none; }
+ol li { list-style:outside decimal; margin-left:15px; }
 p ul,p ol,.indent { margin-left:15px; }
 
 img { -ms-interpolation-mode:bicubic; border:0; display:block; max-width:100%; vertical-align:middle; }
 label { cursor:pointer; }
 legend { border:0; margin-left:-7px; padding:0; white-space:normal; }
-input[type=text],select,textarea { border:1px solid #1d2c57; color:#666; font:normal 400 .9em ProximaNova, Arial, sans-serif; padding:5px; }
+input[type=text],select,textarea { font:normal 400 1.4em ProximaNova, Arial, sans-serif; padding:5px; width: 95%; height: 15px; top: 0; margin-top:-1px; }
 button,input,select,textarea { font-size:100%; margin:0; vertical-align:middle; }
 button,input { line-height:normal; }
-button,input[type=button],input[type=reset],input[type=submit] { -webkit-appearance:button; cursor:pointer; overflow:visible; }
+button,input[type=button],input[type=reset],input[type=submit] { -webkit-appearance:button; cursor:pointer; overflow:visible; border: 1px solid #ccc; }
 button[disabled],input[disabled] { cursor:default; }
 input[type=checkbox],input[type=radio] { box-sizing:border-box; height:13px; padding:0; width:13px; }
 input[type=search] { -moz-box-sizing:content-box; -webkit-appearance:textfield; -webkit-box-sizing:content-box; box-sizing:content-box; }
@@ -174,7 +174,7 @@ table td.s font { word-wrap:break-word; }
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::
 	HEADER
 ::::::::::::::::::::::::::::::::::::::::::::::::::: */
-#header { background:#2c5e91 url(../img/header-bg.jpg) repeat-x top; border-bottom:1px solid #17244c; min-height:130px; padding:0 10px; }
+#header { background:#2c5e91 url(../img/header-bg.jpg) repeat-x top; border-bottom:1px solid #17244c; min-height:130px; padding:0 10px; position:relative; }
 #header-content { margin:0 auto; max-width:960px; padding:20px 0; position:relative; }
 
 #logo a { background:url(../img/sprites.png) 0 0 no-repeat; display:block; height:46px; text-indent:-9999px; width:144px; }
@@ -210,7 +210,7 @@ ul.main-nav-template-spacer{ margin: 42px 0 0 0 !important; }
 #search div { position:relative; }
 #search #search-bar { width:215px; }
 #search #search-btn { background:url(../img/search-btn.gif) no-repeat top left; border:0; height:25px; padding:0 35px 0 0; position:absolute; right:0; text-indent:-99999px; top:2px; width:25px; }
-#searchbox { position:absolute; right:0; top:36px; }
+#searchbox { position: absolute; right: 0; top: 36px; }
 #searchbox form { background:#fff; border:1px solid #1D2C57; height:26px; position:relative; width:225px; }
 #searchbox #searchbox-input { border:none!important; font-size:12px; left:0; padding:5px 0 5px 5px; position:absolute; top:0; width:185px; }
 #searchbox #searchbox-btn { background:url(../img/search-btn.gif) no-repeat top left; border:0; height:25px; margin:0; padding:0; position:absolute; right:0; top:0; width:35px; }
@@ -237,8 +237,8 @@ ul.main-nav-template-spacer{ margin: 42px 0 0 0 !important; }
 #secondary-nav li { border-bottom:1px solid #abd0e8; color:#fff; margin-bottom:5px; padding-bottom:5px; }
 #secondary-nav li a { color:#fff; display:block; font-size:1.3em; font-weight:600; line-height:1.4em; text-decoration:none; text-transform:uppercase; }
 #secondary-nav li a:hover,
-#secondary-nav li a.active,
-#secondary-nav .active { color:#ffe800; }
+#secondary-nav li a.is-active,
+#secondary-nav a.is-active { color:#ffe800; }
 #secondary-sub-nav { margin:10px 0 0 20px; }
 #secondary-sub-nav li { border:none; font-size:.9em; }
 
@@ -324,14 +324,14 @@ h2 + .link-category { border-top:0!important; margin-bottom:0!important; padding
 .gallery-caption { color:#347bad; font-size:1.3em; text-align:center; }
 
 .full-page #main-content { margin:-20px 0 45px; max-width:920px; }
-.full-page #secondary-nav { background:#3284bf; float:left; left:0; margin:0 20px 20px 0; padding:10px; position:static; top:0; width:175px; z-index:10; }
-.full-page #interior-split-page-header-full { border-bottom:1px solid #347bad; margin:0 0 20px 215px; max-width:74%; width:100%; }
+.full-page #secondary-nav { background:#3284bf; float:left; left:0; margin:0px 20px 20px 0px; padding:10px; position:relative; top:0; width:175px; z-index:100; }
+.full-page #interior-split-page-header-full { border-bottom:1px solid #347bad; margin:0px 0px 20px 215px; max-width:74%; width:100%; }
 .full-page #interior-split-container { margin:0 0 40px 215px; position:relative; z-index:-1; }
-.full-page #interior-split-hero-image { max-width:none; width:736px; }
+.full-page #interior-split-hero-image { max-width:none; }
 .full-page #interior-split-hero-image-600x134 { left:0; margin-bottom:30px; position:relative; }
 .full-page .right-wide-column { margin-left:215px; width:auto; }
 
-#interior-split-hero-image { margin-bottom:30px; width:600px; }
+#interior-split-hero-image { margin-bottom:30px; }
 #interior-split-page-header { border-bottom:1px solid #347bad; float:left; margin-bottom:40px; width:300px; }
 
 .bio-img { float:left; }
@@ -484,9 +484,9 @@ a.offset-right { display:block; margin-left:50px; }
 #footer { background:#2c5e91 url(../img/footer-bg.jpg) repeat-x bottom; border-top:1px solid #17244c; bottom:0; clear:both; height:auto; padding:0 0 6px; position:fixed; width:100%; z-index:100; }
 #footer-content { margin:0 auto; max-width:960px; overflow:auto; padding:6px 0 0; position:relative; }
 #footer ul { margin-bottom:0; overflow:hidden; }
-#footer li { background:url(../img/sprites.png) no-repeat -2px -265px; display:inline; float:left; margin:0 0 0 12px; padding:0 0 0 12px; }
+#footer li { background:url(../img/sprites.png) no-repeat -2px -265px; display:inline; float:left; margin:0 0 0 12px; padding:0 0 0 12px; color: #fff; font-size:1.2em; line-height:1.6em;}
 #footer li:first-child { background:none; margin:0; padding:0; }
-#footer a { color:#fff; font-size:1.2em; line-height:1.6em; text-decoration:none; }
+#footer a { color:#fff; text-decoration:none; }
 #footer a:hover { border-bottom:1px solid #ffe800; color:#ffe800; text-decoration:none; }
 
 #contact-info { border-top:1px solid #ffe800; display:none; float:left; margin:10px 0 0; padding:10px 20px 0 0; width:505px; }
@@ -705,6 +705,19 @@ html[xmlns] .slides  { display:block; }
 .lt-ie8 #footer #social-media a { display:block; float:left; }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::
+	DRUPAL EDITOR MENU TASKS EB
+::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+#menu-edit {
+    display: inline-block;
+    padding: 0 0 0 20px;
+}
+/*hiding second unnecessary home link eb*/
+
+/*.menu-hide {
+    display: none;
+}*/
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::
 	STICKY FOOTER
 ::::::::::::::::::::::::::::::::::::::::::::::::::: */
 body.sticky-footer #footer { height:100px; position:relative; z-index:auto; }
@@ -759,7 +772,20 @@ body.sticky-footer #page-wrap { margin-bottom:-107px; padding-bottom:0px; }
 .mobile .callout-link { background:url('../img/mobile/callout-link-arrow-mobile.png') no-repeat left 5px; background-size:20px 13px; }
 
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-	TEMPLATE STYLES - ONLY USED FOR STATIC AND WORDPRESS TEMPLATES
+	TEMPLATE STYLES - ONLY USED FOR STATIC AND DRUPAL TEMPLATES
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 #template-logo a { display: block; }
-
+.logo { float: left; }
+.logo img { width: 50%; margin-top:-20px; }
+.header-inner { display: inline-block; width:960px; }
+.content-inner { display: inline-block; width: 650px; }
+.header-inner { margin: -20px 0 45px; }
+#block-ucla-gateway-page-title { border-bottom: 1px solid #347bad; margin: 0 0 20px 0; width:100%; }
+#interior-split-hero-image div p img { max-width: none; width: 736px; }
+#block-ucla-gateway-content article div div#interior-split-hero-image .content-wrapper { font-size: 16px; line-height: 1.2; }
+.search-help-link { display: none; }
+.search-again { height: 25px; border: 1px solid #ccc; }
+input#edit-keys { border: 1px solid #8e8e8e; font-size: 16px; }
+.container-inline label { font-size: 16px; }
+form#search-form label { color: #347bad; font-weight: bold; width: 155px; float: left; line-height:0 }
+form#search-form label:after { content: ": " }

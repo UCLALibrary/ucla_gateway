@@ -3,8 +3,12 @@ global-styling:
   css:
     theme:
       css/fancybox.css: {}
-      css/fixed.css: {}
+      # css/fixed.css: {}
       css/flexslider.css: {}
       css/main.css: {}
       # css/print.css: {}
       css/responsive.css: {}
+css-front:
+  css:
+    theme:
+      css/css-front.css: {}
