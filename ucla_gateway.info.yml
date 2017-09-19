@@ -13,6 +13,7 @@ regions:
   hero: Hero
   nav_hero: Nav Hero
   nav_main: Nav Main
+  secondary_nav: Sidebar Nav
   content: Content
   nav_left: Nav Left
   footer: Footer  
