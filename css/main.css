@@ -776,7 +776,6 @@ body.sticky-footer #page-wrap { margin-bottom:-107px; padding-bottom:0px; }
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 #template-logo a { display: block; }
 .logo { float: left; }
-.logo img { width: 50%; margin-top:-20px; }
 .header-inner { display: inline-block; width:960px; }
 .content-inner { display: inline-block; width: 650px; }
 .header-inner { margin: -20px 0 45px; }
