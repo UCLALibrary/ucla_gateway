@@ -98,7 +98,7 @@ p ul,p ol,.indent { margin-left:15px; }
 img { -ms-interpolation-mode:bicubic; border:0; display:block; max-width:100%; vertical-align:middle; }
 label { cursor:pointer; }
 legend { border:0; margin-left:-7px; padding:0; white-space:normal; }
-input[type=text],select,textarea { font:normal 400 1.4em ProximaNova, Arial, sans-serif; padding:5px; width: 95%; height: 15px; top: 0; margin-top:-1px; }
+input[type=text],select,textarea { font:normal 400 1.4em ProximaNova, Arial, sans-serif; padding:5px; width: 95%; height: 15px; top: 0; }
 button,input,select,textarea { font-size:100%; margin:0; vertical-align:middle; }
 button,input { line-height:normal; }
 button,input[type=button],input[type=reset],input[type=submit] { -webkit-appearance:button; cursor:pointer; overflow:visible; border: 1px solid #ccc; }
@@ -209,15 +209,14 @@ ul.main-nav-template-spacer{ margin: 42px 0 0 0 !important; }
 #search { position:absolute; right:0; top:40px; }
 #search div { position:relative; }
 #search #search-bar { width:215px; }
-#search #search-btn { background:url(../img/search-btn.gif) no-repeat top left; border:0; height:25px; padding:0 35px 0 0; position:absolute; right:0; text-indent:-99999px; top:2px; width:25px; }
+/*#search #search-btn { background:url(../img/search-btn.gif) no-repeat top left; border:0; height:25px; padding:0 35px 0 0; position:absolute; right:0; text-indent:-99999px; top:2px; width:25px; }*/
 #searchbox { position: absolute; right: 0; top: 36px; }
-#searchbox form { background:#fff; border:1px solid #1D2C57; height:26px; position:relative; width:225px; }
-#searchbox #searchbox-input { border:none!important; font-size:12px; left:0; padding:5px 0 5px 5px; position:absolute; top:0; width:185px; }
-#searchbox #searchbox-btn { background:url(../img/search-btn.gif) no-repeat top left; border:0; height:25px; margin:0; padding:0; position:absolute; right:0; top:0; width:35px; }
+#searchbox form { background:#fff; border:0px solid #1D2C57; height:26px; position:relative; width:225px; }
+/*#searchbox #searchbox-btn { background:url(../img/search-btn.gif) no-repeat top left; border:0; height:25px; margin:0; padding:0; position:absolute; right:0; top:0; width:35px; }*/
 #searchbox .focus { background:#FFF!important; }
 #searchbox .search-site { background:#FFF; }
 #searchbox .searchbox-background { background: #FFF url(../img/sprites.png) no-repeat 3px -208px; }
-
+#searchbox input { font-size: 100%; vertical-align: middle; right: 0; position: absolute; border:none!important;}
 #print-logo { display:none; }
 #mobile-buttons { display:none; }
 
