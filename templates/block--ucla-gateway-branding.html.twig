@@ -21,9 +21,8 @@
       <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
     </a>
 </div>
-  {% endif %}
-  {% if site_name %}
-    <a href="{{ path('<front>') }}" rel="home">Home</a>
+  {% elseif site_name %}
+    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
   {% endif %}
   {{ site_slogan }}
 {% endblock %}
