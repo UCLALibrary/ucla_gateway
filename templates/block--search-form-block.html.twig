@@ -27,13 +27,9 @@
  * @ingroup themeable
  */
 #}
-<div{{ attributes }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-</div>
+<div id="searchbox">
+  <form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8" data-drupal-form-fields="edit-keys,searchbox-btn">
+    <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="text" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control" placeholder="Site Search">
+    <input id="searchbox-btn" type="image" value="Submit" name="search" alt="Site Search" src="{{ base_path ~ directory }}/img/search-btn.gif">
+  </div>
+</form>

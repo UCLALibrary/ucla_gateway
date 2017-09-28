@@ -95,8 +95,8 @@ function ucla_gateway_theme_suggestions_node_alter(array &$suggestions, array $v
 /**
  * Implements hook_preprocess_HOOK() for Block document templates.
  */
-function ucla_gateway_preprocess_block(array &$variables) {
-
+function ucla_gateway_preprocess_block(&$variables) {
+  $variables['base_path'] = base_path();
 }
 
 /**
