@@ -1,19 +1,22 @@
 <div id="ie6Warning"></div>
 <!-- Page Wrap -->
 <div id="page-wrap">
+  <!-- Top Bar -->
+  {{ page.top_bar }}
   <ul class="visually-hidden focusable" id="skip-nav">
     <li><a href="#audience-nav">Skip to Audience Navigation</a></li>
     <li><a href="#secondary-nav">Skip to Nav Menu</a></li>
     <li><a href="#searchbox">Skip to Search</a></li>
     <li><a href="#main-content">Skip to Main Content</a></li>
   </ul>
-  <!-- Top Bar -->
-  {{ page.top_bar }}
   <div id="top-bar" role="navigation">
     <div id="top-bar-content">
       <a href="http://www.ucla.edu/" id="edu-link">UCLA.edu</a>
-      <!-- Top Bar Right Menu-->
-      {{ page.top_bar_right }}
+      <ul id="audience-nav">
+        <li><a href="http://www.library.ucla.edu/">UCLA Library</a></li>
+        <li><a href="https://gseis.ucla.edu/">UCLA GSEIS</a></li>
+        <li><a href="http://www.sr.ithaka.org/">Ithaka S+R</a></li>
+      </ul>
     </div>
   </div>
   <!-- End Top Bar -->
@@ -27,7 +30,7 @@
       <!-- Main -->
       <div id="main-content" role="main">
           {{ page.secondary_nav }}
-
+        
           {{ page.content }}
         </div>
       </div><!--End main-content -->
