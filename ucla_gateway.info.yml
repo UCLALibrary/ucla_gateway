@@ -8,6 +8,7 @@ libraries:
 base theme: false
 regions:
   top_bar: Top Bar
+  top_bar_right: Top Bar Right
   header: Header
   header_right: Header Right
   hero: Hero
@@ -16,4 +17,4 @@ regions:
   secondary_nav: Sidebar Nav
   content: Content
   nav_left: Nav Left
-  footer: Footer  
+  footer: Footer
