@@ -91,7 +91,6 @@ sub { bottom:-.25em; }
 dd { margin:0 0 0 15px; }
 
 ul,ol { margin:0 0 10px; }
-ul li { list-style:none; }
 ol li { list-style:outside decimal; margin-left:15px; }
 p ul,p ol,.indent { margin-left:15px; }
 
